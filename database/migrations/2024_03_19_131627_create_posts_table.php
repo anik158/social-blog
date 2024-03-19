@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->string('slug')->unique();
             $table->text('excerpt')->comment('Summary of the post');
+            $table->string('image')->nullable();
             $table->longText('description');
             $table->boolean('is_published')->nullable(false);
             $table->integer('min_to_read')->nullable(false);

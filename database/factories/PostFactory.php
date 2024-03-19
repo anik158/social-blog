@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -21,6 +22,7 @@ class PostFactory extends Factory
             'slug' => Str::slug($title),
             'excerpt' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
+            'image' => $this->faker->imageUrl(),
             'is_published' => $this->faker->boolean,
             'min_to_read' => $this->faker->numberBetween(1, 4),
         ];

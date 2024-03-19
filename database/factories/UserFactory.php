@@ -26,7 +26,7 @@ class UserFactory extends Factory
         $phoneNumber = '+88' . $this->faker->numerify('###########');
         return [
             'name' => $this->faker->name,
-            'email' => 'novice@example.com',
+            'email' => $this->faker->email,
             'phone' => $phoneNumber,
             'email_verified_at' => now(),
             'password' => bcrypt('123456'),
