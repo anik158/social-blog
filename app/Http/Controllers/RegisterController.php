@@ -54,7 +54,6 @@ class RegisterController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
             'phone' => ['required', 'unique:users,phone,' . $user->id, 'regex:/^(?:\\+?8801|01)[1-9]\\d{8}$/'],
-            'password' => 'required',
             'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

@@ -3,6 +3,9 @@
 @section('title','profile')
 
 @section('posts')
+    @if(session('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
+    @endif
     <section class="row justify-content-center mt-2">
         <div class="card bg-dark text-white">
             <img class="card-img" style="height: 20rem"  src="#" alt="Card image">

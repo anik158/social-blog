@@ -50,18 +50,13 @@
 
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="password">Password</label>
-                                <input id="password" type="password" class="form-control" name="password" required>
-                                <div class="invalid-feedback">
-                                    Password is required
-                                </div>
+                                <input id="password" type="password" class="form-control" name="password">
+
                             </div>
 
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="img">Profile Picture</label>
-                                <input id="img" type="file" class="form-control" name="img" value="" required>
-                                <div class="invalid-feedback">
-                                    Photo is invalid
-                                </div>
+                                <input id="img" type="file" class="form-control" name="img" value="" >
                             </div>
 
                             <div class="align-items-center d-flex">
