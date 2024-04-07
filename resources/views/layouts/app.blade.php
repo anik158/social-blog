@@ -20,7 +20,7 @@
         </li>
         @if(\Illuminate\Support\Facades\Auth::check())
         <li class="nav-item">
-            <a class="nav-link {{ Helper::isActiveRoute('profile') ? 'active' : '' }}" href="{{ route('profile') }}">Profile</a>
+            <a class="nav-link {{ Helper::isActiveRoute('profile') ? 'active' : '' }}" href="{{ route('user.profile') }}">Profile</a>
         </li>
         @endif
 

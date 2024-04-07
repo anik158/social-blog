@@ -19,6 +19,9 @@
                 </div>
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
+                        @if(session('success'))
+                            <div class="alert alert-success">{{session('success')}}</div>
+                        @endif
                         <h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
                         <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="" autocomplete="off">
                             @csrf
@@ -56,7 +59,7 @@
                     </div>
                     <div class="card-footer py-3 border-0">
                         <div class="text-center">
-                            Don't have an account? <a href="register.html" class="text-dark">Create One</a>
+                            Don't have an account? <a href="{{route("registration-page")}}" class="text-dark">Create One</a>
                         </div>
                     </div>
                 </div>
