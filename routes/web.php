@@ -13,6 +13,7 @@ Route::get('register',[RegisterController::class,'index'])->name('registration-p
 Route::post('register',[RegisterController::class,'create'])->name('registration-form');
 Route::get('user/edit/{id}', [RegisterController::class, 'edit'])->name('user.edit');
 Route::put('user/{id}',[RegisterController::class,'update'])->name('user.update');
+Route::delete('delete/{id}', [RegisterController::class, 'destroy'])->name('user.delete');
 
 Route::get('/login-form',[LoginController::class,'login_form'])->name('login-page');
 Route::post('login-status',[LoginController::class,'loginUser'])->name('login');

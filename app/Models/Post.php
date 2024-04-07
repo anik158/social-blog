@@ -18,5 +18,16 @@ class Post extends Model
         'min_to_read'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }
 

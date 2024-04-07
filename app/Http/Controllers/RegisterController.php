@@ -62,7 +62,9 @@ class RegisterController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->password = Hash::make($request->password);
+        if (!empty($request->password)) {
+            $user->password = Hash::make($request->password);
+        }
         $user->image = 'images/' . $imageName;
         $user->save();
 
@@ -71,6 +73,12 @@ class RegisterController extends Controller
         }
 
         return redirect()->route('user.profile')->with('success', 'User updated successfully.');
+    }
+
+
+    public function destroy($id){
+        $user = User::find($id);
+        $user->delete();
     }
 
 

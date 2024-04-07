@@ -51,7 +51,6 @@
                             <div class="mb-3">
                                 <label class="mb-2 text-muted" for="password">Password</label>
                                 <input id="password" type="password" class="form-control" name="password">
-
                             </div>
 
                             <div class="mb-3">
@@ -60,7 +59,7 @@
                             </div>
 
                             <div class="align-items-center d-flex">
-                                <button type="submit" class="btn btn-warning ms-auto">
+                                <button type="submit" class="btn btn-warning ms-auto" onclick="return confirm('Are you sure you want to update?')">
                                     Update
                                 </button>
                             </div>
