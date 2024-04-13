@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
                         <p class="card-text">{{ $post->excerpt }}</p>
-                        <a href="{{ route('post.show', $post->slug) }}" class="btn btn-primary">Read More</a>
+                        <a href="#">Read More</a>
                     </div>
                 </div>
             </section>

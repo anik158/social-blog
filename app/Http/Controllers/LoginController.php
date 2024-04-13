@@ -18,7 +18,6 @@ class LoginController extends Controller
     {
         $login = request()->input('email');
         $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
-        Log::info('Login: ' . $login . ', Field: ' . $field);  // Add this line
         request()->merge([$field => $login]);
         return $field;
     }
@@ -57,7 +56,7 @@ class LoginController extends Controller
 
     protected function redirectPath()
     {
-        return route('post-list');
+        return route('post.list');
     }
 
 

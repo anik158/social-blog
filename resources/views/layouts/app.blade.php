@@ -16,7 +16,7 @@
 <div class="container">
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link {{ Helper::isActiveRoute('post-list') ? 'active' : '' }}" href="{{ route('post-list') }}">Home</a>
+            <a class="nav-link {{ Helper::isActiveRoute('post.list') ? 'active' : '' }}" href="{{ route('post.list') }}">Home</a>
         </li>
 
         @if(\Illuminate\Support\Facades\Auth::check())
@@ -32,7 +32,7 @@
             </li>
         @else
             <li class="nav-item">
-                <a class="nav-link {{ Helper::isActiveRoute('login-page') ? 'active' : '' }}" href="{{ route('login-page') }}">Login</a>
+                <a class="nav-link {{ Helper::isActiveRoute('login.page') ? 'active' : '' }}" href="{{ route('login.page') }}">Login</a>
             </li>
         @endif
 
