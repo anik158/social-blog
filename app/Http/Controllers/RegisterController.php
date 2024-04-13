@@ -57,23 +57,24 @@ class RegisterController extends Controller
             'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imageName = $request->img ? $request->img->getClientOriginalName() : $user->image;
-
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
         if (!empty($request->password)) {
             $user->password = Hash::make($request->password);
         }
-        $user->image = 'images/' . $imageName;
-        $user->save();
 
         if ($request->img) {
+            $imageName = $request->img->getClientOriginalName();
             $request->img->storeAs('public/images', $imageName);
+            $user->image = 'images/' . $imageName;
         }
+
+        $user->save();
 
         return redirect()->route('user.profile')->with('success', 'User updated successfully.');
     }
+
 
 
     public function destroy($id){

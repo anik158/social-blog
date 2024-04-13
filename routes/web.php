@@ -24,7 +24,7 @@ Route::get('/settings',function(){
 })->name('settings')->middleware('auth');
 
 Route::get('/home',[HomeController::class,'index'])->name('post-list');
-Route::get('/post/{slug}',[HomeController::class,'show'])->name('show-post');
+Route::get('/post/{slug}',[HomeController::class,'show'])->name('post.show');
 
 Route::get('/profile',[ProfileController::class,'index'])->name('user.profile')->middleware('auth');
 

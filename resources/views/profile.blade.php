@@ -8,10 +8,7 @@
     @endif
     <section class="row justify-content-center mt-2">
         <div class="card bg-dark text-white">
-            <img class="card-img" style="height: 20rem"  src="#" alt="Card image">
-            <div class="card-img-overlay">
-                <h5 class="card-title">Card title</h5>
-            </div>
+            <img class="card-img" style="height: 20rem" src="{{ asset('storage/' . auth()->user()->image) }}" alt="User image">
         </div>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -28,13 +25,16 @@
                 </form>
             </div>
         </div>
-        <div class="card" style="width: 50rem;">
-            <img src="#" style="height: 20rem"  class="card-img-top" alt="Post Image">
-            <div class="card-body">
-                <h5 class="card-title">..</h5>
-                <p class="card-text">..</p>
-                <a href="#" class="btn btn-primary">Read More</a>
+            <div class="card" style="width: 50rem;">
+                @foreach (auth()->user()->posts as $post)
+                <img src="{{ asset('storage/' . $post->image) }}" style="height: 20rem" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $post->title }}</h5>
+                    <p class="card-text">{{ $post->excerpt }}</p>
+                    <a href="{{ route('post.show',  $post->slug) }}" class="btn btn-primary">Read More</a>
+                </div>
+                @endforeach
             </div>
-        </div>
+
     </section>
 @endsection
